@@ -1,0 +1,30 @@
+# Laravel
+/vendor/*
+node_modules/
+.env
+.env.*
+/public/storage
+/storage/*.key
+/storage/pail
+/public/hot
+/public/build
+.phpunit.result.cache
+.phpunit.cache
+
+# IDE và Editor
+/.idea/
+/.vscode/
+/.phpactor.json
+/.fleet/
+/.nova/
+/.zed/
+
+/auth.json
+
+# Debug logs
+npm-debug.log
+yarn-error.log
+
+# Homestead
+Homestead.json
+Homestead.yaml
