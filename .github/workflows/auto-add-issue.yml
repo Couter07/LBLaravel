@@ -7,7 +7,9 @@ on:
 permissions:
   issues: write
   contents: read
-  project: write
+  # repository-projects: write # Dòng này chỉ có tác dụng nếu project là repository-owned.
+                              # Với user-owned project, GITHUB_TOKEN mặc định không có quyền.
+                              # Nếu bạn muốn an toàn, có thể giữ lại, nhưng không phải là giải pháp cho lỗi này.
 
 jobs:
   add-to-project:
@@ -17,5 +19,4 @@ jobs:
         uses: peter-evans/add-to-project@v1
         with:
           project-url: https://github.com/users/Couter07/projects/2
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
+          github-token: ${{ secrets.PROJECT_PAT }} # <-- Thay đổi ở đây!
